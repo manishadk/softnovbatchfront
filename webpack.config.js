@@ -33,7 +33,15 @@ module:{
 			use: 'babel-loader'
 
 
+		},
+		//for css files
+		{
+			test:/\.css$/,
+			exclude:/node_modules/,
+			use:['style-loader','css-loader'] // to convert css to js
+		// from right first css loader second style loader
 		}
+
 	]
 },
 // devserver  to serve the pplication , only in development, node can be used to serve in production
