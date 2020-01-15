@@ -354,6 +354,13 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import{
+BrowserRouter as Router,
+Switch,
+Link , // ahref equiv
+Route // to catch the cliked route
+
+} from 'react-router-dom'
 import Login from './components/Login/Login' // folder then filename
 
 class Index extends React.Component {
@@ -362,11 +369,54 @@ class Index extends React.Component {
 
             super()
         }
-
+// routing navigation reactnavigation 
+// we will use react-router-dom
+// react react native 
+// user login registration and  user list  withdelete button edit button
         render() {
             return (
-                <div> {/* for wrapping jsx components */}
-                < Login />
+                <div> {/* for wrapping jsx components or use Fragment <> </> */}
+              	
+              	<Router>
+              	<div>
+              	<nav>
+              	<ul>
+	              	<li>
+	              	{/*<a href ="/">Home</a>*/}
+	              	<Link to="/">Home </Link>
+	              	</li>
+	              	<li>
+	              	<Link to="/login">Login </Link>
+	              	</li>
+	               	<li>
+	              	<Link to="/registration">Registration </Link>
+	              	</li>
+              	</ul>
+              	</nav>
+              	</div>
+
+              	<Switch>
+
+         {/*     	<Route path="/">
+              		< Home/>
+              	</Route>*/}
+
+              	 	<Route exact path="/login">
+              		< Login/>
+              		</Route>
+
+              		 OR
+
+              		<Route exact path="/login" component={Login} />
+
+
+
+
+              	</Switch>
+
+              	</Router>
+
+
                 </div>
 
              )
