@@ -354,74 +354,131 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import{
-BrowserRouter as Router,
-Switch,
-Link , // ahref equiv
-Route // to catch the cliked route
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Link, // ahref equiv
+    Route // to catch the cliked route
 
 } from 'react-router-dom'
+import {
+
+    Nav, Container,Row,Col,Card
+
+} from 'react-bootstrap'
 import Login from './components/Login/Login' // folder then filename
+
 
 class Index extends React.Component {
 
-        constructor() {
+    constructor() {
 
-            super()
-        }
-// routing navigation reactnavigation 
-// we will use react-router-dom
-// react react native 
-// user login registration and  user list  withdelete button edit button
-        render() {
-            return (
-                <div> {/* for wrapping jsx components or use Fragment <> </> */}
-              	
-              	<Router>
-              	<div>
-              	<nav>
-              	<ul>
-	              	<li>
-	              	{/*<a href ="/">Home</a>*/}
-	              	<Link to="/">Home </Link>
-	              	</li>
-	              	<li>
-	              	<Link to="/login">Login </Link>
-	              	</li>
-	               	<li>
-	              	<Link to="/registration">Registration </Link>
-	              	</li>
-              	</ul>
-              	</nav>
-              	</div>
+        super()
+    }
 
-              	<Switch>
+    Footer = () => {
+     return (
+                <Row>
+                  <Col sm={4}>
+                  About Hotel
+                  Location:
+                  Phone:
 
-         {/*     	<Route path="/">
-              		< Home/>
-              	</Route>*/}
+                  </Col>
+                  <Col sm={4}>
+                  Copyright
+                </Col>
+                  <Col sm={4}>
+                  Map
+                </Col>
+        </Row>
+            )
 
-              	 	<Route exact path="/login">
-              		< Login/>
-              		</Route>
+}
+    render() {
+        return (
+          <Container>
+  <Row style={{marginBottom:'30px'}}>
+    <Col sm={8}>
+    <Card >
+  <Card.Body>
+    <Card.Title>Hello</Card.Title>
+    <Card.Subtitle className="mb-2 text-muted">My assignmnet</Card.Subtitle>
+    <Card.Text>
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </Card.Text>
+    <Card.Link href="#">Learn More </Card.Link>
+    <Card.Link href="#">Another Link</Card.Link>
+  </Card.Body>
+</Card>
+    </Col>
+    <Col sm={4}>
+        <h2>Welcome </h2>
+    </Col>
+  </Row> 
+            <div> {/* for wrapping jsx components or use Fragment <> </> */}
+                
+                <Router>
+                <Row>
+                <div>
 
-              		 OR
+          <Nav  variant="pills" >
+                <Nav.Item>
+                  <Nav.Link as={Link} to="/" active={true} >Home</Nav.Link> {/*as to use custom component */}
+                </Nav.Item>
+                  <Nav.Item>
+                  <Nav.Link as={Link} to="/regsitration">Regsitration</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link as={Link} to="/logout">Logout</Nav.Link>
+                </Nav.Item>
+          </Nav>
+                </div>
+                </Row>
 
-              		<Route exact path="/login" component={Login} />
+                <Switch>
+
+         {/*      <Route path="/">
+                  < Home/>
+                </Route>*/}
+
+                  <Route exact path="/login">
+                  < Login/>
+                  </Route>
+
+
+
+    {/*              <Route component={} />*/}
+
+       {/*            OR
+
+                  <Route exact path="/login" component={Login} />*/}
 
 
 
 
-              	</Switch>
+                </Switch>
 
-              	</Router>
+                </Router>
 
 
                 </div>
+                  < this.Footer/>
+                </Container>
 
-             )
-}
+        )
+    }
 
 }
 
 ReactDOM.render(<Index />, document.getElementById('root'))
+
+
+
+
+

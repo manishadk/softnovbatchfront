@@ -1,10 +1,8 @@
 import React from 'react'
-// import Button from '../Button/Button'
 import { 
   Form, Button
 } from 'react-bootstrap'
-import Axios from 'axios'
-class Login extends React.Component{
+class Regsitration extends React.Component {
 
 constructor(){
   super()
@@ -20,14 +18,14 @@ constructor(){
 
 usernameChangeHandler = (event) => {
 
-  this.setState({username: event.target.value})
+  this.setState({usename: event.target.value})
 
 
 }
 
 passwordChangeHandler = (event) => {
 
-this.setState({password: event.target.value})
+his.setState({password: event.target.value})
   
 }
 
@@ -40,33 +38,17 @@ fromSubmitHnadler = (e) => {
 // Axios external package
 
 
-  console.log(this.state) // this sate js object
-  // 1st url 
-  // 2nd data JS object
-  // 3rd header JS object 
-var headers = {
-
-'Content-Type':'application/json'
-
-}
-  Axios.post('http://localhost:3023/registration', this.state , headers)
-  .then(function(response){
-
-  })
-  .catch(function(err){
-
-  })
-
+  console.log(this.state)
 }
 
 render(){
 
   return(
 
-<Form onSubmit={this.fromSubmitHnadler}>
+<Form onSubmit={fromSubmitHnadler}>
   <Form.Group controlId="formBasicEmail">
     <Form.Label>Username </Form.Label>
-    <Form.Control type="text" placeholder="Enter username" value={this.state.username} onChange={this.usernameChangeHandler} />
+    <Form.Control type="text" placeholder="Enter username" value={this.state.username} onChange={usernameChangeHandler} />
     <Form.Text className="text-muted">
       We'll never share your email with anyone else.
     </Form.Text>
@@ -74,7 +56,7 @@ render(){
 
     <Form.Group controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Enter password" value={this.state.password} onChange={this.passwordChangeHandler} />
+    <Form.Control type="password" placeholder="Enter password" value={this.state.password} onChange={passwordChangeHandler} />
     <Form.Text className="text-muted">
       We'll never share your email with anyone else.
     </Form.Text>
@@ -89,4 +71,4 @@ render(){
 }
 }
 
-export default Login
+export default Regsitration
