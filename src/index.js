@@ -368,6 +368,7 @@ import {
 
 } from 'react-bootstrap'
 import Login from './components/Login/Login' // folder then filename
+import Regsitration from './components/Registration/Registration'
 
 
 class Index extends React.Component {
@@ -376,6 +377,8 @@ class Index extends React.Component {
 
         super()
     }
+
+
 
     Footer = () => {
      return (
@@ -421,7 +424,7 @@ class Index extends React.Component {
             <div> {/* for wrapping jsx components or use Fragment <> </> */}
                 
                 <Router>
-                <Row>
+                <Row style={{marginBottom:'40px'}}>
                 <div>
 
           <Nav  variant="pills" >
@@ -429,7 +432,7 @@ class Index extends React.Component {
                   <Nav.Link as={Link} to="/" active={true} >Home</Nav.Link> {/*as to use custom component */}
                 </Nav.Item>
                   <Nav.Item>
-                  <Nav.Link as={Link} to="/regsitration">Regsitration</Nav.Link>
+                  <Nav.Link as={Link} to="/registration">Registration</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link as={Link} to="/login">Login</Nav.Link>
@@ -450,6 +453,13 @@ class Index extends React.Component {
                   <Route exact path="/login">
                   < Login/>
                   </Route>
+
+                  <Route exact path="/registration">
+                  < Regsitration/>
+                  </Route>
+
+              
+
 
 
 

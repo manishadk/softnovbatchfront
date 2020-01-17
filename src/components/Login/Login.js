@@ -68,7 +68,7 @@ render(){
     <Form.Label>Username </Form.Label>
     <Form.Control type="text" placeholder="Enter username" value={this.state.username} onChange={this.usernameChangeHandler} />
     <Form.Text className="text-muted">
-      We'll never share your email with anyone else.
+      Login
     </Form.Text>
   </Form.Group>
 
