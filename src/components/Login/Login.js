@@ -49,8 +49,22 @@ var headers = {
 'Content-Type':'application/json'
 
 }
-  Axios.post('http://localhost:3023/registration', this.state , headers)
+
+var data = {
+  username:this.state.username, 
+  password:this.state.password
+}
+
+
+// url // data // headers
+  Axios.post('http://localhost:3023/login', data , headers)
   .then(function(response){
+
+    console.log(response.data)
+
+    //store the token in local storage of broser for future use 
+
+    localStorage.setItem("user_token",response.data.userToken)
 
   })
   .catch(function(err){

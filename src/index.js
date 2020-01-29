@@ -369,6 +369,9 @@ import {
 } from 'react-bootstrap'
 import Login from './components/Login/Login' // folder then filename
 import Regsitration from './components/Registration/Registration'
+import Users from './Users/Users'
+
+import Logo from '../public/assets/js.jpg';
 
 
 class Index extends React.Component {
@@ -418,6 +421,8 @@ class Index extends React.Component {
 </Card>
     </Col>
     <Col sm={4}>
+    <img src={Logo} />
+    <img src={'/assets/js.jpg'} />
         <h2>Welcome </h2>
     </Col>
   </Row> 
@@ -435,7 +440,10 @@ class Index extends React.Component {
                   <Nav.Link as={Link} to="/registration">Registration</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                  <Nav.Link as={Link} to="/login" >Login</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link as={Link} to="/users" >User List</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link as={Link} to="/logout">Logout</Nav.Link>
@@ -456,6 +464,10 @@ class Index extends React.Component {
 
                   <Route exact path="/registration">
                   < Regsitration/>
+                  </Route>
+
+                <Route exact path="/users">
+                  < Users/>
                   </Route>
 
               
